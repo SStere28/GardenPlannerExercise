@@ -69,16 +69,14 @@ public class App {
             getPlants.put(plant[0], Integer.parseInt(plant[1]));
             System.out.print("Enter plant (format: name,amount): ");
 
-//           System.out.print("Enter plant (format: name,amount): ");
-//            keyboard.next();
         }
         return getPlants;
     }
 
     public static void showResults(Result result) {
         System.out.println("\n***Result***\n");
-        System.out.println("Required area: " + result.area + " m2");
-        System.out.println("Water need: " + result.waterAmount + " l");
+        System.out.printf("Required area: %.1f m2\n", result.area);
+        System.out.printf("Water need: %.1f l\n",result.waterAmount);
         if (!result.areaOk || !result.waterOk) {
             System.out.println("Plan is NOT feasible in your garden! :(");
             if (!result.areaOk) {
